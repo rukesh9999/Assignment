@@ -40,9 +40,10 @@ public class StoreService {
 		logger.info("Entered into ..." + Thread.currentThread().getStackTrace()[1].getMethodName() + "... IN... "
 				+ this.getClass().getName());
 
-		if (url == null) {
+		if (url.equals("") || url.equalsIgnoreCase("null") || url.equals(null) || url==null) {
 			throw new UrlCannotbeNullException(" please provide url  ");
 		}
+
 
 		Optional<Store> optstore = storeRepository.findByUrl(url);
 
@@ -72,9 +73,10 @@ public class StoreService {
 		logger.info("Entered into ..." + Thread.currentThread().getStackTrace()[1].getMethodName() + "... IN... "
 				+ this.getClass().getName());
      
-		if (url == null) {
+		if (url.equals("") || url.equalsIgnoreCase("null") || url.equals(null) || url==null) {
 			throw new UrlCannotbeNullException(" please provide url  ");
-		}  
+		}
+ 
 		
 		Optional<Store> optstore = storeRepository.findByUrl(url);
 
@@ -104,9 +106,10 @@ public class StoreService {
 		logger.info("Entered into ..." + Thread.currentThread().getStackTrace()[1].getMethodName() + "... IN... "
 				+ this.getClass().getName());
 
-		if (url == null) {
+		if (url.equals("") || url.equalsIgnoreCase("null") || url.equals(null) || url==null) {
 			throw new UrlCannotbeNullException(" please provide url  ");
 		}
+
 		
 		Optional<Store> optstore = storeRepository.findByUrl(url);
 
