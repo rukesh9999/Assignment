@@ -1,0 +1,31 @@
+ Architectue of storeAPI
+ =======================
+ 
+ 
+ 
+ 
+                                RESTAPI     
+                     
+                     
+                     
+                                StoreURL               
+                      
+                      
+                                Get Uniquekey Based on Url                >>>>>>>>>>>>>                DataBase
+ client >>>>>>>                   
+                      
+                                GetCount 
+                      
+                      
+                                GetAll Urls
+                      
+
+
+
+In this Architecture All rest endpoints are exposed over the web and  useful to accessed by  all the users . the restend points will finally interact with the database
+to store,get ,update the data as per customers requirement
+
+typicllyh , this architecure contains :
+
+1)users or client  2) restendpoints 2) database
+
