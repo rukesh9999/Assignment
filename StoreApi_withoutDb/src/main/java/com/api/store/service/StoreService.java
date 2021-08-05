@@ -32,7 +32,7 @@ public class StoreService {
 		logger.info("Entered into ..." + Thread.currentThread().getStackTrace()[1].getMethodName() + "... IN... "
 				+ this.getClass().getName());
 
-		if (url == null) {
+		if (url.equals("") || url.equalsIgnoreCase("null") || url.equals(null) || url==null) {
 			throw new UrlCannotbeNullException(" please provide url  ");
 		}
 
@@ -68,9 +68,11 @@ public class StoreService {
 				+ this.getClass().getName());
 
 		String uniquekey = null;
-		if (url == null) {
+		
+		if (url.equals("") || url.equalsIgnoreCase("null") || url.equals(null) || url==null) {
 			throw new UrlCannotbeNullException(" please provide url  ");
 		}
+
 
 		Boolean flag = this.findByName(url);
 
@@ -104,9 +106,10 @@ public class StoreService {
 
 		Integer storeCount=null;
 		
-		if (url == null) {
+		if (url.equals("") || url.equalsIgnoreCase("null") || url.equals(null) || url==null) {
 			throw new UrlCannotbeNullException(" please provide url  ");
 		}
+
 
 		Boolean flag = this.findByName(url);
 
