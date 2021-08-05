@@ -70,7 +70,11 @@ public class StoreService {
 	public String getStoreUrl(String url) {
 		logger.info("Entered into ..." + Thread.currentThread().getStackTrace()[1].getMethodName() + "... IN... "
 				+ this.getClass().getName());
-
+     
+		if (url == null) {
+			throw new UrlCannotbeNullException(" please provide url  ");
+		}  
+		
 		Optional<Store> optstore = storeRepository.findByUrl(url);
 
 		if (!optstore.isPresent()) {
@@ -99,6 +103,10 @@ public class StoreService {
 		logger.info("Entered into ..." + Thread.currentThread().getStackTrace()[1].getMethodName() + "... IN... "
 				+ this.getClass().getName());
 
+		if (url == null) {
+			throw new UrlCannotbeNullException(" please provide url  ");
+		}
+		
 		Optional<Store> optstore = storeRepository.findByUrl(url);
 
 		if (!optstore.isPresent()) {
