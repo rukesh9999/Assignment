@@ -11,10 +11,13 @@ This is a RestApi implemented using SpringBoot,Spring rest,spring datajpa
 
 we can access the rest api by runningit by the following urls
 
-http://localhost:8080/storeurl?url=google.com
-http://localhost:8080/get?url=google.com
-http://localhost:8080/count?url=google.com
-http://localhost:8080/list?page=1&size=2
+1)http://localhost:8080/storeurl?url=google.com
+
+2)http://localhost:8080/get?url=google.com
+
+3)http://localhost:8080/count?url=google.com
+
+4)http://localhost:8080/list?page=1&size=2
 
 the documentation done by using swagger 
 
