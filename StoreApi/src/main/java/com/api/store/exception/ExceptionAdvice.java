@@ -32,7 +32,12 @@ public class ExceptionAdvice {
 		return new ResponseEntity<ErrorDto>(errordto,HttpStatus.NOT_FOUND);
 	}
 	
-	
+	@ExceptionHandler(NoSuchURLFoundexception.class)
+	public ResponseEntity<ErrorDto> handleNoSuchURLFoundexception(NoSuchURLFoundexception NoSuchURLFoundexception)
+	{
+		ErrorDto errordto = new ErrorDto(HttpStatus.NOT_FOUND.value(),NoSuchURLFoundexception.getMessage());		
+		return new ResponseEntity<ErrorDto>(errordto,HttpStatus.NOT_FOUND);
+	}
 	
 	
 }

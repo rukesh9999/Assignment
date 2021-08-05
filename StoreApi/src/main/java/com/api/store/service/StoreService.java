@@ -14,6 +14,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.api.store.controller.StoreController;
+import com.api.store.exception.NoSuchURLFoundexception;
 import com.api.store.exception.UrlAlreadyExistsException;
 import com.api.store.exception.UrlCannotbeNullException;
 import com.api.store.model.Store;
@@ -78,7 +79,7 @@ public class StoreService {
 		Optional<Store> optstore = storeRepository.findByUrl(url);
 
 		if (!optstore.isPresent()) {
-			throw new UrlAlreadyExistsException("This Url not found ");
+			throw new NoSuchURLFoundexception("This Url not found ");
 		}
 
 		Store store = optstore.get();
@@ -110,7 +111,7 @@ public class StoreService {
 		Optional<Store> optstore = storeRepository.findByUrl(url);
 
 		if (!optstore.isPresent()) {
-			throw new UrlAlreadyExistsException("This Url not found ");
+			throw new NoSuchURLFoundexception("This Url not found ");
 		}
 
 		logger.info("End of ..." + Thread.currentThread().getStackTrace()[1].getMethodName() + "... IN... "
