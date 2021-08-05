@@ -27,6 +27,12 @@ public class StoreService {
 
 	@Autowired
 	private StoreRepository storeRepository;
+	
+	/**used for save URL
+	 * @author @rukesh
+	 * @param url
+	 * @return
+	 */
 
 	public Store SavestoreUrl(String url) {
 
@@ -54,6 +60,13 @@ public class StoreService {
 		return storeRepository.save(store);
 	}
 
+	
+	
+	/**used for  get  uniquekey for url
+	 * @author Rukesh  
+	 * @param url
+	 * @return
+	 */
 	public String getStoreUrl(String url) {
 		logger.info("Entered into ..." + Thread.currentThread().getStackTrace()[1].getMethodName() + "... IN... "
 				+ this.getClass().getName());
@@ -76,6 +89,12 @@ public class StoreService {
 
 	}
 
+	
+	/**used for get count of no.of times url has been accessed
+	 * @author Rukesh
+	 * @param url
+	 * @return
+	 */
 	public Integer getStoreCount(String url) {
 		logger.info("Entered into ..." + Thread.currentThread().getStackTrace()[1].getMethodName() + "... IN... "
 				+ this.getClass().getName());
@@ -93,6 +112,13 @@ public class StoreService {
 
 	}
 
+	/**
+	 * used to get list of urls
+	 * @author Rukesh
+	 * @param pageNo
+	 * @param pageSize
+	 * @return
+	 */
 	public List<Store> getAllStoreUrls(Integer pageNo, Integer pageSize) {
 		logger.info("Entered into ..." + Thread.currentThread().getStackTrace()[1].getMethodName() + "... IN... "
 				+ this.getClass().getName());
@@ -112,6 +138,12 @@ public class StoreService {
 
 	}
 
+	/**
+	 * Used for generate random key
+	 * @author Rukesh
+	 * @param n
+	 * @return
+	 */
 	String getAlphaNumericString(int n) {
 		logger.info("Entered into ..." + Thread.currentThread().getStackTrace()[1].getMethodName() + "... IN... "
 				+ this.getClass().getName());

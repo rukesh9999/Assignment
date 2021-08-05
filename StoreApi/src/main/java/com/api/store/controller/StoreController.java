@@ -21,6 +21,13 @@ public class StoreController {
 
 	@Autowired
 	private StoreService storeService;
+	
+	
+	/**API Endpoint for saveStoreURL
+	 * @author @Rukesh
+	 * @param storeurl
+	 * @return
+	 */
 
 	@PostMapping("/storeurl")
 	public ResponseEntity<Store> saveStoreUrl(@RequestParam("url") String storeurl) {
@@ -35,6 +42,12 @@ public class StoreController {
 		return new ResponseEntity<Store>(store, HttpStatus.CREATED);
 	}
 
+	
+	/**API endpoint for get uniquecode of url
+	 * @author Rukesh 
+	 * @param storeurl
+	 * @return
+	 */
 	@GetMapping("/get")
 	public ResponseEntity<String> getStoreUrl(@RequestParam("url") String storeurl) {
 		logger.info("Entered into ..." + Thread.currentThread().getStackTrace()[1].getMethodName() + "... IN... "
@@ -47,6 +60,13 @@ public class StoreController {
 
 		return new ResponseEntity<String>(uniquekey, HttpStatus.OK);
 	}
+	
+	
+	/**API endpoint for get  no of times url accessed
+	 * @author Rukesh
+	 * @param storeurl
+	 * @return
+	 */
 
 	@GetMapping("/count")
 	public ResponseEntity<Integer> getStoreCount(@RequestParam("url") String storeurl) {
@@ -60,6 +80,15 @@ public class StoreController {
 
 		return new ResponseEntity<Integer>(urlAccessCount, HttpStatus.OK);
 	}
+	
+	
+	/**API endpoint for list of urls
+	 * used for
+	 * @author Rukesh
+	 * @param page
+	 * @param size
+	 * @return
+	 */
 
 	@GetMapping("/list")
 	public ResponseEntity<List<Store>> getStoreUrls(@RequestParam(defaultValue = "0") String page,

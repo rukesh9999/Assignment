@@ -9,7 +9,11 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 
-
+/**
+ * store entity class
+ * @author Rukesh
+ *
+ */
 
 
 @Entity

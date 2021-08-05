@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.api.store.dto.ErrorDto;
 
+/**
+ * This class will map ugly error message  to custom exception error messages
+ * @author Rukesh
+ *
+ */
 @RestControllerAdvice
 public class ExceptionAdvice {
 
