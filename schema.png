@@ -7,8 +7,8 @@ the table schema as follows
 
      
      
-      id+                  primary key,   not null ,  unique
-      url+                 not null , unique
+      id                  primary key,   not null ,  unique
+      url                not null , unique
       count                not nul
       unique short key     unique, not null
 
