@@ -62,7 +62,7 @@ public class StoreController {
 	}
 
 	@GetMapping("/list")
-	public ResponseEntity<List<Store>> getStoreUrls(@RequestParam(defaultValue = "0") String page,
+	public ResponseEntity<List<String>> getStoreUrls(@RequestParam(defaultValue = "0") String page,
 			@RequestParam(defaultValue = "0") String size) {
 		logger.info("Entered into ..." + Thread.currentThread().getStackTrace()[1].getMethodName() + "... IN... "
 				+ this.getClass().getName());
@@ -70,12 +70,12 @@ public class StoreController {
 		Integer pageno = Integer.parseInt(page);
 		Integer pagesize = Integer.parseInt(size);
 
-		List<Store> store = storeService.getAllStoreUrls(pageno, pagesize);
+		List<String> urls = storeService.getAllStoreUrls(pageno, pagesize);
 
 		logger.info("End of  ..." + Thread.currentThread().getStackTrace()[1].getMethodName() + "... IN... "
 				+ this.getClass().getName());
 
-		return new ResponseEntity<List<Store>>(store, HttpStatus.OK);
+		return new ResponseEntity<List<String>>(urls, HttpStatus.OK);
 	}
 
 }
